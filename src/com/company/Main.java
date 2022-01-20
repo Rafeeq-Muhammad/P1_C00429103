@@ -6,9 +6,6 @@ import java.util.Scanner;
 
 public class Main {
 
-    //Variable for problem 3
-    public static String binary_string = "";
-
     public static void main(String[] args) {
 
         //Crete a scanner object
@@ -72,13 +69,19 @@ public class Main {
 
     //Problem 3
     public static String binary(int n) {
-        binary_string = binary_string + String.valueOf(n%2);
+//        binary_string = binary_string + String.valueOf(n%2);
+//        if (n/2 == 0) {
+//
+//        } else {
+//            binary(n/2);
+//        }
+//        return binary_string;
         if (n/2 == 0) {
-
+            return String.valueOf(n%2);
         } else {
-            binary(n/2);
+            return String.valueOf(n%2) + String.valueOf(binary(n%2));
         }
-        return binary_string;
+
     }
 
 
