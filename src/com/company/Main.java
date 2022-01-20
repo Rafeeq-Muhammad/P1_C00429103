@@ -5,9 +5,11 @@ package com.company;
 
 public class Main {
 
-    //Problem 1
     public static void main(String[] args) {
-	System.out.println(recursiveAddition(4));
+        //Problem 1
+        int p1 = 10;
+        System.out.print("Problem 1 result: ");
+	    System.out.println(recursiveAddition(p1));
     }
 
     //Problem 1
@@ -17,8 +19,9 @@ public class Main {
         } else {
             return n+recursiveAddition(n-1);
         }
-        //return n+recursiveAddition(n-1);
     }
+
+
 
 }
 
