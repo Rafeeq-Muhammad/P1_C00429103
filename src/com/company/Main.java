@@ -30,7 +30,8 @@ public class Main {
         int p3_num = scan.nextInt(); //Get a number from the user
 
         //public static String binary_string; //Binary digits get appended to this string
-        print(binary(p3_num));
+        print("Binary representation of your number: ");
+        println(binary(p3_num));
 
 
     }
