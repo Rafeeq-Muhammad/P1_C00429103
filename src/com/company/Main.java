@@ -2,7 +2,7 @@
 // C00429103
 // CMPS 261
 //
-// Program Description: This program is a series of recursive functions.
+// Program Description: This program is a problem set that involves a series of recursive functions.
 //
 // Certificate of Authenticity:
 //I certify that the code in the method functions including method function main of this project are entirely my own work.
@@ -20,38 +20,75 @@ public class Main {
 
         //Problem 1
         int p1 = 10;
-        print("Problem 1 result: ");
+        print("Problem 1 recursive addition result: ");
         println(recursiveAddition(p1));
 
         //Problem 2
         int m = 10;
         int n = 9;
-        System.out.print("Problem 2 result: ");
+        System.out.print("Problem 2 gcd result: ");
         System.out.println(gcd(m, n));
 
         //Problem 3
-        print("Enter a number for problem 3: ");
-        int p3_num = scan.nextInt(); //Get a number from the user
-        print("Binary representation of your number: ");
-        println(binary(p3_num));
+//        print("Enter a number for problem 3: ");
+//        int p3_num = scan.nextInt(); //Get a number from the user
+//        print("Binary representation of your number: ");
+//        println(binary(p3_num));
+
+        //Problem 4
+        int harmonic_num = 2;
+        print("The nth harmonic of ");
+        print(harmonic_num);
+        print(" is ");
+        System.out.println(harmonic(harmonic_num));
 
 
     }
 
-    //Define print statement
-    public static void print(String str) { System.out.print(str); }
+    /* Name:        print
+     *
+     * Description: Prints a string to the console.
+     *
+     * Pre:         The function accepts a string as an input.
+     *
+     * Post:        The function prints the string to the console.
+     */
+    public static void print(String str) {
+        System.out.print(str);
+    }
 
-    //Define print statement
+    /* Name:        print
+     *
+     * Description: Prints an integer to the console.
+     *
+     * Pre:         The function accepts an integer as a parameter.
+     *
+     * Post:        The function prints the integer to the console.
+     */
     public static void print(int num) {
         System.out.print(num);
     }
 
-    //Define println statement
+    /* Name:        println
+     *
+     * Description: The function prints a string to the console followed by a newline.
+     *
+     * Pre:         The function accepts a string as an input.
+     *
+     * Post:        The function prints the string to the console, followed by a newline.
+     */
     public static void println(String str) {
         System.out.println(str);
     }
 
-    //Define println statement
+    /* Name:        println
+     *
+     * Description: The function prints an integer to the console followed by a newline.
+     *
+     * Pre:         The function accepts an integer as an input.
+     *
+     * Post:        The function prints the integer to the console, followed by a newline.
+     */
     public static void println(int num) {
         System.out.println(num);
     }
@@ -107,9 +144,29 @@ public class Main {
         } else {
             return String.valueOf(n % 2) + String.valueOf(binary(n % 2));
         }
-
     }
+
+
+    /* Name:        harmonic
+     *
+     * Description: This double-valued function calculates and returns the nth harmonic number, where
+     *              n is an integer that the function receives as a parameter.
+     *
+     * Pre:         An integer n is defined and passed to the function.
+     *
+     * Post:        An double value, the nth harmonic, is returned.
+     */
+
+    public static double harmonic(int n) {
+        if (n == 1) {
+            return 1;
+        } else {
+            return 1/Double.valueOf(n) + harmonic(n-1);
+        }
+    }
+
 }
+
 
 
 
@@ -123,3 +180,4 @@ public class Main {
  *
  * Post:        .
  */
+
