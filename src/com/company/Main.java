@@ -20,29 +20,52 @@ public class Main {
 
         //Problem 1
         int p1 = 10;
-        print("Problem 1 recursive addition result: ");
+        print("Problem 1, recursive addition result: ");
         println(recursiveAddition(p1));
 
         //Problem 2
         int m = 10;
         int n = 9;
-        System.out.print("Problem 2 gcd result: ");
+        System.out.print("Problem 2, gcd result: ");
         System.out.println(gcd(m, n));
 
         //Problem 3
-//        print("Enter a number for problem 3: ");
-//        int p3_num = scan.nextInt(); //Get a number from the user
-//        print("Binary representation of your number: ");
-//        println(binary(p3_num));
+        print("Problem 3, please inter a number: ");
+        int p3_num = scan.nextInt(); //Get a number from the user
+        print("Problem 3, the binary representation of your number is ");
+        println(binary(p3_num));
 
         //Problem 4
-        int harmonic_num = 2;
-        print("The nth harmonic of ");
-        print(harmonic_num);
-        print(" is ");
-        System.out.println(harmonic(harmonic_num));
+        for (int i = 1; i <= 10; i++) {
+            print("Problem 4 The ");
+            print(i);
+            print("th harmonic number is ");
+            System.out.println(series(i));
+        }
 
+        //Problem 5
+        for (int i = 1; i <= 10; i++) {
+            print("Problem 5, m(");
+            print(i);
+            print(") = ");
+            System.out.println(series(i));
+        }
 
+        //Problem 6
+        int[] p6_array = new int[8];
+        print("Problem 6, please enter 8 integers separated by spaces: ");
+        for (int i = 0; i < p6_array.length; i++) {
+            p6_array[i] = scan.nextInt();
+        }
+        print("Problem 6 The largest number in your array was: ");
+        println(largest_int(0, p6_array[0], p6_array));
+
+        //Problem 7
+        int p7_num = 6;
+        print("Problem 7, ");
+        print(p7_num);
+        print("!! is ");
+        System.out.print(oddevenfact(p7_num));
     }
 
     /* Name:        print
@@ -161,18 +184,74 @@ public class Main {
         if (n == 1) {
             return 1;
         } else {
-            return 1/Double.valueOf(n) + harmonic(n-1);
+            return 1 / Double.valueOf(n) + harmonic(n - 1);
         }
     }
 
-    
+    /* Name:        series
+     *
+     * Description: This function computes the series i/(2i + 1), where i is an integer received by the function.
+     *
+     * Pre:         The function receives an integer as a parameter.
+     *
+     * Post:        The function computes the series 1(2i+1) based on the parameter it received.
+     */
 
+    public static double series(int i) {
+        if (i == 1) {
+            return 1.0 / 3.0;
+        } else {
+            return Double.valueOf(i) / Double.valueOf(2 * i + 1) + series(i - 1);
+        }
+    }
+
+    /* Name:        largest_int
+     *
+     * Description: This function receives an array of integers, and returns the
+     *              highest integer found in that array.
+     *
+     * Pre:         The user is prompted to input 8 integers. The 0h index, and value of the array at the 0th index,
+     *              and the array containing the integers is passed to the function.
+     *
+     * Post:        .
+     */
+    public static int largest_int(int index, int largest_num, int[] array) {
+        if (index > array.length - 1) {
+            return largest_num;
+        } else {
+            if (array[index] > largest_num) {
+                largest_num = array[index];
+            }
+            index = index + 1;
+            return largest_int(index, largest_num, array);
+        }
+    }
+
+    /* Name:        oddevenfact
+     *
+     * Description: This function calculates n!!, where n is a single integer argument inputted
+     *              into the function.
+     *
+     * Pre:         An integer n is passed into the function.
+     *
+     * Post:        The n!! is calculated in the function. The result, a long, is returned.
+     */
+    public static long oddevenfact(int n) {
+        if (n % 2 == 0) { //n is even
+            if (n == 2) { //base case
+                return 2;
+            } else {
+                return n * oddevenfact(n - 2); //general case
+            }
+        } else { //n is odd
+            if (n == 1) { //base case
+                return 1;
+            } else { //general case
+                return n * oddevenfact(n - 2);
+            }
+        }
+    }
 }
-
-
-
-
-
 
 /* Name:        .
  *
@@ -182,4 +261,3 @@ public class Main {
  *
  * Post:        .
  */
-
