@@ -165,7 +165,7 @@ public class Main {
         if (n / 2 == 0) {
             return String.valueOf(n % 2);
         } else {
-            return String.valueOf(n % 2) + String.valueOf(binary(n % 2));
+            return String.valueOf(n % 2) + String.valueOf(binary(n / 2));
         }
     }
 
